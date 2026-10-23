@@ -229,6 +229,6 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      appName: hackers-api
+      appName: dd-hackers-api
       versionStart: "3.0"
-      repo: shozab-unify-examples/sn-hackers-api
+      repo: ddreakford/dd-hackers-api
