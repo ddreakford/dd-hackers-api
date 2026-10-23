@@ -225,7 +225,7 @@ jobs:
     needs:
       - ci
       - security
-    uses: shozab-unify-examples/sn-hackers-workflows/container-build.yaml
+    uses: ddreakford/dd-hackers-workflows/container-build-publish.yaml
     vars: inherit
     secrets: inherit
     with:
