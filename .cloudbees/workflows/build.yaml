@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 jobs:
-  ci:
+  build_test:
     outputs:
       CODE_COVERAGE: ${{ steps.test_metrics.outputs.CODE_COVERAGE }}
 
@@ -188,7 +188,7 @@ jobs:
           echo "Unit tests failed. Container publication is blocked."
           exit 1
 
-  security:
+  security_scan:
     steps:
       - name: Get source code
         uses: cloudbees-io/checkout@v1
@@ -223,8 +223,8 @@ jobs:
 
   container_build_publish:
     needs:
-      - ci
-      - security
+      - build_test
+      - security_scan
     uses: ddreakford/dd-hackers-workflows/container-build-publish.yaml
     vars: inherit
     secrets: inherit
