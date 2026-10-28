@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Get source code
-        uses: cloudbees-io/checkout@v1
+        uses: cloudbees-io/checkout@v2
 
       - name: Generate Swagger documentation
         uses: docker://golang:1.23
@@ -191,7 +191,7 @@ jobs:
   security_scan:
     steps:
       - name: Get source code
-        uses: cloudbees-io/checkout@v1
+        uses: cloudbees-io/checkout@v2
 
       - name: Scan Go source with Gosec
         id: gosec
